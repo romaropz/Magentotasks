@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="\WolfSellers\Catalog\Api\CatalogProductsByCategoryInterface" type="\WolfSellers\Catalog\Module\CatalogProductsByCategory"/>
+    <preference for="\WolfSellers\Catalog\Api\Data\CatalogProductsInterface" type="\WolfSellers\Catalog\Module\CatalogProductsResult"/>
+    <preference for="\WolfSellers\Catalog\Api\Data\ProductItemInterface" type="\WolfSellers\Catalog\Module\ProductItem"/>
+    <preference for="\Magento\Catalog\Model\Product\Attribute\Backend\TierPrice\SaveHandler" type="\WolfSellers\Catalog\Model\Product\Attribute\Backend\TierPrice\SaveHandler"></preference>
+
+    <!-- Plugins-->
+    <type name="\Magento\Catalog\Model\Product\Type\Price">
+        <plugin name="wolfseller_set_tier_prices" type="WolfSellers\Catalog\Plugin\Price" sortOrder="0" />
+    </type>
+</config>

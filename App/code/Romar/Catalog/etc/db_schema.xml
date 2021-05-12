@@ -1,0 +1,6 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="catalog_product_entity_tier_price">
+        <column xsi:type="varchar" name="currency_code" default="" nullable="false" length="5" comment="currency code"/>
+    </table>
+</schema>

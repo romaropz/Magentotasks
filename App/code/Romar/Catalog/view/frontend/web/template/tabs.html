@@ -1,0 +1,49 @@
+<table>
+    <tr data-bind="foreach: getColumnKeys()">
+        <!-- ko if: $parent.hasChildren($data) -->
+        <th>
+            <label data-bind="text: $parent.getCategoryLabel($data)" for="subCat"/>
+            <select name="subCat" id="subCat" data-bind="foreach: $parent.getParentChild($data)">
+                <option data-bind="value: $data.category_id, text: $data.label"/>
+            </select>
+        </th>
+        <!-- /ko -->
+        <!-- ko ifnot: $parent.hasChildren($data) -->
+        <th data-id="text: $parent.getCategoryId($data)"
+            data-bind="click: $parent.getProducts.bind($parent,$parent.getCategoryId($data)),text: $parent.getCategoryLabel($data), attr:{class:$parent.getCategoryLabel($data)} " ></th>
+        <!-- /ko -->
+    </tr>
+    <tr>
+        <td colspan="5">
+            <table>
+                <tr>
+                    <th text="table.columns.products"/>
+                    <th text="table.columns.code"/>
+                    <th text="table.columns.presentation"/>
+                    <th text="table.columns.seeMore"/>
+                    <th text="table.columns.cart"/>
+                </tr>
+                <!-- ko foreach: productItems() -->
+                <tr>
+                    <td data-bind="text: $data.product_name"/>
+                    <td data-bind="text: $data.product_code"/>
+                    <td data-bind="text: $data.presentation"/>
+                    <td data-bind="text: $data.product_name" class="see_more"/>
+                    <td data-bind="text: $data.product_name" class="cart"/>
+                </tr>
+                <!-- /ko -->
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- ko if: showPagination() -->
+    <ul>
+        <!-- ko foreach: new Array(totalPages()) -->
+        <li>
+            <strong class="page" data-bind="click: $parent.loadNextPage.bind($parent,$index()+1)">
+                <span data-bind="text: $index()+1"/>
+            </strong>
+        </li>
+        <!-- /ko -->
+    </ul>
+<!-- /ko -->

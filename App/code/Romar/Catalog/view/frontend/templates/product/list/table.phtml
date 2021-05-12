@@ -1,0 +1,24 @@
+<?php
+$tableStructure = $block->getStructure();
+if (empty($tableStructure))
+    return;
+?>
+
+<div data-bind="scope:'wolfSellersTabs'" class="product-table">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wolfSellersTabs": {
+                        "component": "wolfSellers/ComponetTabs",
+                        "structure":<?php echo json_encode($tableStructure); ?>
+                    }
+                }
+            }
+        }
+    }
+
+</script>

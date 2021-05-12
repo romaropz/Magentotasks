@@ -1,0 +1,7 @@
+{
+    "catalog_product_entity_tier_price": {
+        "column": {
+            "currency_code": true
+        }
+    }
+}

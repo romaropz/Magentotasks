@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="tier_price_fs">
+        <dynamicRows name="tier_price">
+            <container name="record" component="Magento_Ui/js/dynamic-rows/record">
+                <field name="source_currency_code" formElement="select">
+                    <settings>
+                        <dataType>text</dataType>
+                        <label translate="true">Select Currency</label>
+                        <dataScope>select_example</dataScope>
+                    </settings>
+                    <formElements>
+                        <select>
+                            <settings>
+                                <options>
+                                    <option name="1" xsi:type="array">
+                                        <item name="value" xsi:type="string">MXN</item>
+                                        <item name="label" xsi:type="string">Option #1</item>
+                                    </option>
+                                    <option name="2" xsi:type="array">
+                                        <item name="value" xsi:type="string">USD</item>
+                                        <item name="label" xsi:type="string">Option #2</item>
+                                    </option>
+                                    <option name="3" xsi:type="array">
+                                        <item name="value" xsi:type="string">EUR</item>
+                                        <item name="label" xsi:type="string">Option #3</item>
+                                    </option>
+                                </options>
+                                <caption translate="true">-- Please Select --</caption>
+                            </settings>
+                        </select>
+                    </formElements>
+                </field>
+            </container>
+        </dynamicRows>
+    </fieldset>
+</form>
